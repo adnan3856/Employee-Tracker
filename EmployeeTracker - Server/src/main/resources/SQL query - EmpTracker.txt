@@ -1,0 +1,27 @@
+-- Create a sequence generator
+CREATE OR REPLACE SEQUENCE USER_ID_SEQ START 100000;
+
+-- Create the 'empinfo' table
+CREATE TABLE empinfo (
+    user_id INT PRIMARY KEY DEFAULT nextval('USER_ID_SEQ'),
+    name VARCHAR(255),
+    email VARCHAR(255),
+    contact_no BIGINT,
+    github_link VARCHAR(255)
+);
+
+
+
+CREATE TABLE emptracker (
+    tracking_id SERIAL PRIMARY KEY,
+    today_date DATE,
+    tracker_day INT,
+    total_hour INT,
+    learning_activity TEXT,
+    assignment_activity TEXT,
+    description TEXT,
+    detail_description TEXT,
+    area_to_improve TEXT,
+    progress_completion INT,
+    review_comments TEXT
+);
